@@ -1,0 +1,9 @@
+Storage has the following functions:
+•	put(key, value) – The "put" function should have two parameters – one for the key and one for the value. If the key is not a string, you should throw an error. If the key already exists in the storage, you should throw an error. Otherwise you should save the key-value pair in memory
+•	get(key) – The "get" function should have one parameter – for the key. If the key is not a string, you should throw an error. If the key does not exist in the storage, you should throw an error. Otherwise the function should return the value corresponding to the provided key
+•	getAll() – The "getAll" function should return all key-value pairs from the storage, if the storage is empty it should print appropriate message
+•	update(key, newValue) – The "update" function should have two parameters – one for the key and one for the value. If the key is not a string, you should throw an error. If the key does not exist in the storage, you should throw an error. Otherwise you should update the key-value pair in memory
+•	delete(key) – The "delete" function should have one parameter – for the key. If the key is not a string, you should throw an error. If the key does not exist in the storage, you should throw an error. Otherwise you should delete the key-value pair from the memory storage
+•	clear() – The "clear" function should delete all saved key-value pairs in the storage.
+•	save() – The "save" function should save all key-value pairs on a file named "storage.json". Use JSON format for saving the data. Every time the "save" function is called the file should be overridden, starting from a blank state. Use synchronous file access
+•	load() – The "load" function should read a file named "storage.json", parse the data, and load all the key-value pairs in memory. If the file does not exist yet, do nothing. Use synchronous file access
