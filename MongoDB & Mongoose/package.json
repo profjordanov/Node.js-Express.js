@@ -1,0 +1,25 @@
+{
+  "name": "databasemongo",
+  "version": "1.0.0",
+  "description": "npm install mongodb -g\r npm install mongodb-client --save --save-exact",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongo",
+    "db",
+    "mongoose"
+  ],
+  "author": "JJ",
+  "license": "MIT",
+  "dependencies": {
+    "asyncawait": "^1.0.6",
+    "mongodb": "2.2.31",
+    "mongodb-client": "0.0.1",
+    "mongoose": "4.12.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0"
+  }
+}
