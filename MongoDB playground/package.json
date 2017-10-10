@@ -1,0 +1,20 @@
+{
+  "tagName": "mongodb-exercises",
+  "version": "0.0.4",
+  "description": "mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "JJ",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "1.1.1",
+    "mongodb": "2.2.31",
+    "mongoose": "4.12.1"
+  }
+}
