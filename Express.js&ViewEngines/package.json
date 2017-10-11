@@ -1,0 +1,12 @@
+{
+  "name": "express-js-demo",
+  "version": "1.0.0",
+  "main": "myIndex.js",
+  "author": "JJ",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.1",
+    "express-hbs": "1.0.4"
+  }
+}
