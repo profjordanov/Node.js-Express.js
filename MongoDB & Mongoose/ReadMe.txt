@@ -1,6 +1,6 @@
->C:\Program Files\MongoDB\Server\3.4\bin>
+C:\Program Files\MongoDB\Server\3.4\bin
 
-mongod --dbpath "D:\Software University\Node.js&Express.js\MongoDatabase"
+mongod --dbpath "D:\Software University\MongoDatabase"
 
 Client = C:\Program Files\MongoDB\Server\3.4\bin>mongo
 __________________________________________
