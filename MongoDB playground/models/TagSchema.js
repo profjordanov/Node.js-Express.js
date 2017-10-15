@@ -1,16 +1,14 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 let tagSchema = mongoose.Schema({
-  tagName: {type: mongoose.Schema.Types.String, required: true},
-  creationDate: {type: mongoose.Schema.Types.Date, default: Date.now()},
-  images: [{type: mongoose.Schema.Types.ObjectId, ref:'ImageSchema'}]
+    tagName: { type: mongoose.Schema.Types.String, required: true }
+});
+
+tagSchema.pre('save', function(next){
+    this.tagName = this.tagName.toLowerCase();
+    next();
 })
 
-tagSchema.pre('save', function (next) {
-  this.tagName = this.tagName.toLowerCase()
-  next()
-})
+let Tag = mongoose.model('Tag', tagSchema);
 
-let Tag = mongoose.model('Tag', tagSchema)
-
-module.exports = Tag
+module.exports = Tag;

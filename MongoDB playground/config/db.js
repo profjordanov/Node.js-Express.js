@@ -1,5 +1,7 @@
-const mongoose = require('mongoose')
-const path = 'mongodb://localhost:27017/imagesDb'
+const mongoose = require('mongoose');
+const path = 'mongodb://localhost:27017/imagesDb';
+mongoose.Promise = global.Promise;
 
-mongoose.Promise = global.Promise
-module.exports = mongoose.connect(path, { useMongoClient: true })
+module.exports = mongoose.connect(path, {
+    useMongoClient: true
+})
