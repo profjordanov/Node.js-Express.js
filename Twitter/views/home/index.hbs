@@ -1,0 +1,23 @@
+<h1>Welcome to Twitter Home Page</h1>
+
+<div class="cards">
+    {{#each tweets}}
+        <div class="product-card" style="border: 2px solid black">
+            <p>{{this.author.username}}</p>
+            <p>{{this.date}}</p>
+            <h3>{{this.message}}</h3>
+            <p><span>Likes: {{this.likes}} Views: {{this.views}}</span></p>
+
+            <form method="POST" action="/dislike/{{../this._id}}" id="dislike{{../this._id}}"></form>
+            <a href="javascript:document.getElementById('dislike{{../this._id}}').submit()">Dislike</a>
+
+
+            <form method="POST" action="/like/{{../this._id}}" id="like{{../this._id}}"></form>
+            <a href="javascript:document.getElementById('like{{../this._id}}').submit()">Like</a>
+
+
+            <a class="btn btn-small btn-warning" href="/edit/{{this._id}}">Edit</a>
+            <a class="btn btn-small btn-danger" href="/delete/{{this._id}}">Delete</a>
+        </div>
+    {{/each}}
+</div>

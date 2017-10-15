@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter</title>
+    <link href="/css/site.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/tweet">Add Tweet</a></li>
+                <li><a href="/tag/first">Tag #first</a></li>
+                <li><a href="/profile/Admin">Profile #Admin</a></li>
+                <li><a href="/admins/add">Add Admin</a></li>
+                <li><a href="/admins/all">All Admins</a></li>
+
+
+                <li class="delimeter"></li>
+                {{#if currentUser}}
+                <li class="align-right" >{{currentUser.username}}</li>
+
+                <li class="align-right">
+                    <form id="logout-form" action="/logout" method="post"></form>
+                    <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+                </li>
+                {{else}}
+                <li class="align-right"><a href="/login">Login</a></li>
+                <li class="align-right"><a href="/register">Register</a></li>
+                {{/if}}
+            </ul>
+            </nav>
+        </header>
+        <main>
+            {{#if globalError}}
+            <span>{{globalError}}</span> {{/if}} {{{body}}}
+        </main>
+    </div>
+</body>
+
+</html>

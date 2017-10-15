@@ -1,0 +1,9 @@
+<h1>#{{tag}}</h1>
+
+{{#each tweets}}
+    <div>
+        <p>{{this.author.username}}</p>
+        <p>{{this.date}}</p>
+        <h3>{{this.message}}</h3>
+    </div>
+{{/each}}
