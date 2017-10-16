@@ -1,7 +1,7 @@
 # MongoDB playground
 HTML Node.js MongoDB Mongoose 
 
-#Functionality
+# Functionality
 ##Add Tag
 
 ##Create image
