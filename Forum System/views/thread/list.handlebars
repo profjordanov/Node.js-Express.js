@@ -1,4 +1,4 @@
-<h1>Hi!</h1>
+<h1>All threads</h1>
 
 {{#each threads}}
   <article>
@@ -11,3 +11,13 @@
 {{else}}
   <p>No threads to show.</p>
 {{/each}}
+
+<div class="font-3x">
+  {{#if hasPrevPage}}
+    <a href="/list?page={{prevPage}}">&lt;&lt;</a>
+    &nbsp; &nbsp; &nbsp;
+  {{/if}}
+  {{#if hasNextPage}}
+    <a href="/list?page={{nextPage}}">&gt;&gt;</a>
+  {{/if}}
+</div>

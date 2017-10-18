@@ -38,27 +38,27 @@ module.exports = {
     let reqUser = req.body
     User
       .findOne({ username: reqUser.username }).then(user => {
-      if (!user) {
-        res.locals.globalError = 'Invalid user data'
-        res.render('users/login')
-        return
-      }
-
-      if (!user.authenticate(reqUser.password)) {
-        res.locals.globalError = 'Invalid user data'
-        res.render('users/login')
-        return
-      }
-
-      req.logIn(user, (err, user) => {
-        if (err) {
-          res.locals.globalError = err
+        if (!user) {
+          res.locals.globalError = 'Invalid user data'
           res.render('users/login')
+          return
         }
 
-        res.redirect('/')
+        if (!user.authenticate(reqUser.password)) {
+          res.locals.globalError = 'Invalid user data'
+          res.render('users/login')
+          return
+        }
+
+        req.logIn(user, (err, user) => {
+          if (err) {
+            res.locals.globalError = err
+            res.render('users/login')
+          }
+
+          res.redirect('/')
+        })
       })
-    })
   },
   logout: (req, res) => {
     req.logout()
