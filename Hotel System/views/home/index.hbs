@@ -1,0 +1,16 @@
+<h1>Welcome to Hotel System</h1>
+
+
+{{#each hotels}}
+        <fieldset>
+            <h3><a href="/hotel/{{this._id}}/{{this.title}}">{{this.title}}</a></h3>
+            <p>{{this.location}}</p>
+            <p>author: <a href="/profile/{{this.author.username}}">{{this.author.username}}</a></p>
+            <img src="{{this.imageURL}}" alt="hotel image">
+            <p>{{this.description}}</p>
+            <p><span>Views: {{this.views}} </span><span>Likes: {{this.likes}} </span></p>
+        </fieldset>
+    </a>
+{{else}}
+    <p>No threads to show.</p>
+{{/each}}

@@ -1,0 +1,30 @@
+<h1>{{user.username}}</h1>
+<p>{{user.firstName}} {{user.lastName}}</p>
+
+{{#if isAdmin}}
+    {{#if user.isBlocked}}
+        <form id="unblock" method="post" action="/unblock/{{user._id}}"></form>
+        <a href="javascript:document.getElementById('unblock').submit()">Unblock</a>
+    {{else}}
+        <form id="block" method="post" action="/block/{{user._id}}"></form>
+        <a href="javascript:document.getElementById('block').submit()">Block</a>
+    {{/if}}
+{{/if}}
+
+<h2>Hotels posted:</h2>
+<ul>
+    {{#each hotels}}
+        <li><a href="/hotel/{{this._id}}/{{this.title}}">{{this.title}}</a></li>
+    {{else}}
+        <li>No hotels to show</li>
+    {{/each}}
+</ul>
+
+<h2>Comments posted:</h2>
+{{#each comments}}
+    <p>{{this.content}}</p>
+    <p>on thread: <a href="/post/{{this.hotel._id}}/{{this.hotel.title}}">{{this.hotel.title}}</a></p>
+    <p>{{this.date}}</p>
+{{else}}
+    <p>No comments to show</p>
+{{/each}}

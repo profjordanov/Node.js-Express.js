@@ -1,0 +1,41 @@
+<div class="product-card">
+    <h2>{{hotel.title}}</h2>
+    <h3>Posted On: {{hotel.dateOfCreation}} By: {{hotel.author.username}}</h3>
+    <h5>{{hotel.location}}</h5>
+    <img src="{{hotel.imageURL}}" alt="hotel image" class="product-img">
+    <p><span>Views: {{hotel.views}} </span></p>
+    <p class="post-content">{{hotel.description}}</p>
+    {{#if currentUser}}
+        {{#if hasLiked}}
+            <form id="dislike" method="post" action="/dislike/{{thread._id}}"></form>
+            <a href="javascript:document.getElementById('dislike').submit()">Dislike</a>
+        {{else}}
+            <form id="like" method="post" action="/like/{{thread._id}}"></form>
+            <a href="javascript:document.getElementById('like').submit()">Like</a>
+        {{/if}}
+        <span>Likes: {{hotel.likes}}</span>
+        {{#if isAdmin}}
+            <a href="/post/edit/{{hotel._id}}">Edit</a>
+            <a href="/post/delete/{{hotel._id}}">Delete</a>
+        {{/if}}
+        <br>
+        <form method="post">
+            <textarea name="content" rows="10" placeholder="Add your comment...">{{comment.content}}</textarea>
+            <input type="submit" value="Add comment"/>
+        </form>
+    {{/if}}
+
+    <h3>Comments:</h3>
+    {{#each comments}}
+        <div>
+            <p>{{this.content}}</p>
+            <p>by: {{this.author.username}}, on: {{this.date}}</p>
+        </div>
+        {{#if ../isAdmin}}
+            <a href="/comment/edit/{{this._id}}">Edit</a>
+            <a href="/comment/delete/{{this._id}}">Delete</a>
+        {{/if}}
+    {{else}}
+        <h4>No comments for this hotel.</h4>
+    {{/each}}
+</div>

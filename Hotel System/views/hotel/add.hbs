@@ -1,0 +1,25 @@
+<h2>Create New Hotel</h2>
+
+<form method="post">
+    <label for="title">Hotel title:</label>
+    <input type="text" name="title" required value="{{hotel.title}}"/>
+    <br>
+    <label for="location">Hotel location:</label>
+    <input type="text" name="location" required value="{{hotel.location}}"/>
+    <br>
+    <label for="imageURL">Hotel ImageURL:</label>
+    <input type="text" name="imageURL" required value="{{hotel.imageURL}}"/>
+    <br>
+    <label for="description">Description</label>
+    <textarea name="description" rows="10" required>{{hotel.description}}</textarea>
+    <br>
+    <label for="category">Category:</label>
+    <select name="category">
+
+        {{#each categories}}
+            <option value="{{../this._id}}">{{../this.name}}</option>
+        {{/each}}
+
+    </select>
+    <input type="submit" value="Add Hotel"/>
+</form>

@@ -1,0 +1,25 @@
+<h1>All Hotels</h1>
+
+{{#each hotels}}
+        <fieldset>
+            <h3><a href="/hotel/{{this._id}}/{{this.title}}">{{this.title}}</a></h3>
+            <p>{{this.location}}</p>
+            <p>author: <a href="/profile/{{this.author.username}}">{{this.author.username}}</a></p>
+            <img src="{{this.imageURL}}" alt="hotel image">
+            <p>{{this.description}}</p>
+            <p><span>Views: {{this.views}} </span><span>Likes: {{this.likes}} </span></p>
+        </fieldset>
+    </a>
+{{else}}
+    <p>No hotels to show.</p>
+{{/each}}
+
+<div class="font-3x">
+    {{#if hasPrevPage}}
+        <a href="/list?page={{prevPage}}">&lt;&lt;</a>
+        &nbsp; &nbsp; &nbsp;
+    {{/if}}
+    {{#if hasNextPage}}
+        <a href="/list?page={{nextPage}}">&gt;&gt;</a>
+    {{/if}}
+</div>
