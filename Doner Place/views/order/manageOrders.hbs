@@ -1,0 +1,24 @@
+<h1>Manage orders</h1>
+<div class="orders">
+    {{#each orders}}
+        <form method="post">
+
+            <div class="order">
+                <input name="order_id" type="hidden" value="{{this._id}}">
+                <span class="order-time">{{this.date}}</span>
+                <span class="order-name">{{this.product.category}} doner, {{this.product.size}}cm</span>
+                <span class="order-status">
+							<select name="status" selected="{{this.status}}">
+								<option value="pending">Pending</option>
+								<option value="inProgress">In Progress</option>
+								<option value="inTransit">In Transit</option>
+								<option value="delivered">Delivered</option>
+							</select>
+						</span>
+                <a href="/order/orderDetails/{{this._id}}" class="button order-button">Details</a>
+            </div>
+
+            <input type="submit" value="Save Changes" class="button" style="border:0">
+        </form>
+    {{/each}}
+</div>

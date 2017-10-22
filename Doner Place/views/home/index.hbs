@@ -1,0 +1,44 @@
+<h1>Welcome to Doner Place!</h1>
+<p>We offer a wide variety of tasty doner kebab, cutosmized to your liking. Choose from different sizes of chicken, beef
+    and lamb and any topping you want. Place your order now!</p>
+<div class="products">
+    {{#if currentUser}}
+        {{#if isAdmin}}
+            <h2>Admin</h2>
+            <div class="product-card">
+                <img src="../../static/img/new.png">
+                <a href="/create-product" class="button product-title">Create Product</a>
+            </div>
+        {{/if}}
+    {{/if}}
+
+    <h2>Chicken Doner</h2>
+    {{#each chickens}}
+        <div class="product-card"><img src="{{this.imageUrl}}" alt="Chicken " height="200" width="200"><a
+                href="/customize-order/{{this._id}}"
+                class="button product-title">Order</a></div>
+
+        <a href="/edit-product/{{this._id}}" class="control">EDIT</a>
+        <a href="/delete-product/{{this._id}}" class="control">DELETE</a>
+    {{/each}}
+    <h2>Beef Doner</h2>
+    {{#each beefs}}
+        <div class="product-card"><img src="{{this.imageUrl}}" alt="Beef " height="200" width="200"><a
+                href="/customize-order/{{this._id}}"
+                class="button product-title">Order</a></div>
+
+        <a href="/edit-product/{{this._id}}" class="control">EDIT</a>
+        <a href="/delete-product/{{this._id}}" class="control">DELETE</a>
+
+    {{/each}}
+    <h2>Lamb Doner</h2>
+    {{#each lambs}}
+        <div class="product-card"><img src="{{this.imageUrl}}" alt="lamb " height="200" width="200"><a
+                href="/customize-order/{{this._id}}"
+                class="button product-title">Order</a></div>
+
+        <a href="/edit-product/{{this._id}}" class="control">EDIT</a>
+        <a href="/delete-product/{{this._id}}" class="control">DELETE</a>
+
+    {{/each}}
+</div>
